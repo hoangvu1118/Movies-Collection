@@ -1,0 +1,69 @@
+{%extends "base.html"%}
+{% block additional_nav_items %}
+    <nav class="navbar navbar-nav bg-dark justify-content-between sticky-top">
+            <ul class="navbar-nav">
+                <a class="nav-link" href="/favorite"> ❤ Favorite List </a>
+            </ul>
+            
+    </nav>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    
+{% endblock %}
+
+{%block content%} 
+<div class = "content">
+    {%block button_favorite%}
+    <h1 class= "title" style="background-color: lightgreen ;"> Favorite List </h1>
+    <table> 
+        
+        <tr>
+            <th style="width: 2%;"> ID </th> 
+            <th style="width: 10%;"> Poster </th>
+            <th> Movie's Title</th>
+            <th style="width: 10%;"> Rating</th>
+            <th> Release Date</th>  
+            <th> Actions </th>
+        </tr>
+        {% for i in range(0, data | length) %}   
+        <tr>
+                <td> {{data[i][0]}} </td>
+                <td> <img src="{{data[i][1]}}" alt = "Image" width="100%" height="100%"></td>
+                <td> {{data[i][2]}}</td>
+                <td> {{data[i][3]}}🌟</td>
+                <td> {{data[i][4]}}</td>
+            <td> 
+                <button class ="fav-button" onclick="sendValue('{{data[i][0]}}', this)"> ❤ Favorite  </button>
+                <script>
+                    function sendValue(i, button) {
+                        const value = i;
+                        fetch('/delete-data', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ value: value })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data);
+                            button.style.backgroundColor = "white";
+                            button.style.color = "black";
+
+                        })
+                        .catch(error => {
+                            console.log('Error:', error);
+                        });
+        
+                    }
+                </script>
+                
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {%endblock%}
+</div>
+{%endblock%}

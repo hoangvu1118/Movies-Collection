@@ -1,0 +1,207 @@
+body {
+    margin: 0 auto;
+    font-family: sans-serif;
+    text-align: center;
+    background-color: black;
+    padding: 0%;
+}
+.flashes {
+    margin: 0 auto;
+    padding: 0%;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+    border-bottom: 5px solid red;
+}
+
+.flash-message-box {
+  border: 1px solid red; /* Border color */
+  width: 20%;
+  border-radius: 5px;
+  padding-top: 10px;
+  margin: auto;
+  background-color: #f8d7da; /* Background color */
+  color: #721c24; /* Text color */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('movie.jpg') center center/contain;
+    /* Add blur effect to background */
+  z-index: -1;
+}
+
+.rounded-rectangle {
+  position: absolute;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  width: 30%;
+  height: 35%;  
+  margin: 0 auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure content stays within bounds */
+  z-index: 0;
+}
+  
+.rounded-rectangle::before {
+  content: "";
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-color: black;
+  background: url('white.jpg') no-repeat center center/cover;
+  filter: blur(10px); /* Blur the background image */
+  z-index: -1; /* Ensure it's behind content */
+}
+  
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* This will cover the full height of the viewport */
+}
+.login {
+  position: absolute;
+  margin: auto;
+  z-index: 1; /* Ensure this is above the blurred background */
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.login form p input {
+  width: 100%; 
+  box-sizing: inherit; 
+}
+
+.title_login {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: red;
+  z-index: 1
+}
+
+.title {
+    margin: 0 auto;
+    color: red;
+    font-weight: bold;
+    font-size: 50px;
+    z-index: 0;
+    
+}
+
+.content {
+    align-items: left;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+table, td, th {
+    border: 4px solid white;
+    background-color: black;
+    padding: 0%;
+    
+}
+
+table {
+  width: 100%;;
+  border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+    height: 20px;
+    width: 20%; 
+    font-weight: bold;
+    font-size: 30px;
+    color: yellow;
+    background-color: red;
+    
+}
+
+td {
+    
+    padding: 0px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: black;
+}
+
+.web-button {
+    background-color: white; /* Green background */
+    border: none;             /* Remove borders */
+    color: black;             /* White text */
+    padding: 15px 32px;       /* Some padding */
+    text-align: center;       /* Centered text */
+    text-decoration: none;    /* Remove underline */
+    display: inline-block;    /* Make the button inline element */
+    font-size: 20px;          /* Increase font size */
+    margin: 4px 2px;          /* Some margin */
+    cursor: pointer;          /* Pointer/hand icon on hover */
+    border-radius: 8px;       /* Rounded corners */
+    transition-duration: 0.1s; /* Transition effect for hover */
+    }
+.web-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.fav-button {
+  background-color: green; /* Green background */
+  border: none;             /* Remove borders */
+  color: red;             /* White text */
+  padding: 15px 32px;       /* Some padding */
+  text-align: center;       /* Centered text */
+  text-decoration: none;    /* Remove underline */
+  display: inline-block;    /* Make the button inline element */
+  font-size: 20px;          /* Increase font size */
+  margin: 4px 2px;          /* Some margin */
+  cursor: pointer;          /* Pointer/hand icon on hover */
+  border-radius: 8px;       /* Rounded corners */
+  transition-duration: 0.1s; /* Transition effect for hover */
+  }
+
+
+.web-button:hover {
+    background-color: green;  /* White background on hover */
+    color: red;             /* Black text on hover */
+    border: 2px solid #4CAF50; /* Green border on hover */
+}
+.fav-button:hover {
+  background-color: red;  /* White background on hover */
+  content: "Remove";
+  color: green;             /* Black text on hover */
+  border: 2px solid #4CAF50; /* Green border on hover */
+}
+
+
+select {
+  padding: 0;
+  align-items: center;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white 
+}
+
+.form {
+  display: flex; /* Add this */
+  flex-direction: column; /* Add this */
+  justify-content: center; /* Add this */
+  align-items: center; /* Add this */
+  margin-top: 20px;
+}
