@@ -62,7 +62,7 @@ def rating_down():
 @app.route("/favorite")
 def favoriteMovies():
     if "user" in session:
-        connect= sqlite3.connect(f"Database/{session['user']}.db")
+        connect= sqlite3.connect(f"User_Data/{session['user']}.db")
         cur = connect.cursor()
 
         cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='Movies'")
@@ -80,7 +80,7 @@ def favoriteMovies():
         return render_template("login.html")
     
 def delete_from_DB(id):
-    connect= sqlite3.connect(f"Database/{session['user']}.db")
+    connect= sqlite3.connect(f"User_Data/{session['user']}.db")
     cur = connect.cursor()
     cur.execute(f"DELETE From Movies where ID = {id}")
     connect.commit()
@@ -103,7 +103,7 @@ def check_unique_fav_movie(connect, cur, id):
     return False
 
 def save_to_database(id):
-    connect= sqlite3.connect(f"Database/{session['user']}.db")
+    connect= sqlite3.connect(f"User_Data/{session['user']}.db")
     cur = connect.cursor()
     values = (data[4][id], data[0][id], data[1][id], data[2][id], data[3][id])
 
