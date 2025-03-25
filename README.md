@@ -40,6 +40,6 @@ Movies-Collection-main/
 + User_Data/Default.db: Stores user-specific data.
 
 **License** 
-This project is licensed under the terms of the LICENSE file included in this repository.
++ This project is licensed under the terms of the LICENSE file included in this repository.
 
-### Feel free to add or modify sections to tailor the README to your needs!
+
